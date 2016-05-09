@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+body {
+  font-family: 'Inconsolata', sans;
+  padding-bottom: 30px;
+}
+
+.navbar-inverse{
+    background-color: #000;
+}
+
+.nav  a{
+    color: #fff;
+}
+p{
+    margin: 0 30px;
+}
+
+.container{
+	width: 100%;
+}
+
+.main{
+	margin-top:60px;
+	text-align: center;
+}
+.nav{
+    margin-top: 5px;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+    display: inline-block;
+}
+
+.abs{
+  position: absolute;
+}
+
+h2{
+  color:#000;
+  font-size: 16px;
+}
+
+.interactivities{
+    position: fixed;
+    top: 100px;
+    right: 60px;
+    z-index: 100;
+    display: block;
+    cursor: pointer;
+}
+
+.actions{
+    margin-top: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.actions a{
+    color:#000;
+    font-weight: bolder;
+}
+
+.row.actions h3{
+    font-size: 24px;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 1;
+    font-weight: bold;
+}
+.actions h3:hover{
+    display: block;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.svg, svg {
+    max-width: 400px;
+    width: 100%;
+    font-size: 24px;
+    margin: 0 -200px;
+    position: absolute;
+    display:none;
+}
+
+pre{
+    margin-top: 63px;
+    border: 0!important;
+    background: none !important;
+    display: block;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.92;
+    color: #000;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    letter-spacing: 0.28em;
+    margin-left: 4px;
+}
+
+svg path{fill: red !important;}
+
