@@ -5,12 +5,23 @@ body {
   padding-bottom: 30px;
 }
 
-.navbar-inverse{
-    background-color: #000;
+
+.chiaro{ fill:#fff;}
+
+nav a:hover {
+    opacity: 1;
+}
+.nav>li>a:focus, .nav>li>a:hover{
+    background: none;
 }
 
-.nav  a{
+.navbar-inverse{
+    background-color: red;
+}
+
+.nav a{
     color: #fff;
+    opacity: 0.6;
 }
 p{
     margin: 0 30px;
@@ -34,12 +45,19 @@ p{
     display: inline-block;
 }
 
+.navbar-inverse{
+    border-bottom: 0;
+}
+
+.navbar-inverse a.navbar-brand {
+    color: #fff;
+}
+
 .abs{
   position: absolute;
 }
 
 h2{
-  color:#000;
   font-size: 16px;
 }
 
@@ -54,11 +72,10 @@ h2{
 
 .actions{
     margin-top: 60px;
-    max-width: 900px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 .actions a{
-    color:#000;
     font-weight: bolder;
 }
 
@@ -86,21 +103,18 @@ h2{
 
 pre{
     margin-top: 63px;
-    border: 0!important;
-    background: none !important;
     display: block;
     padding: 0;
     font-size: 13px;
     line-height: 1.92;
-    color: #000;
     word-break: break-all;
     word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 0;
+    background: none;
+    border-radius: 0;
     letter-spacing: 0.28em;
     margin-left: 4px;
 }
 
-svg path{fill: red !important;}
+/*svg path{fill: red !important;}
 
