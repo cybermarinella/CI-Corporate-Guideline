@@ -1,7 +1,18 @@
   var $mycolor =  "hsl("+ Math.floor((Math.random() * 360) + 1)+", 80%, 40%)";
-  var $positivo= true;
+  var $positivo;
   var altezza = $( window ).height();
+
+
+/* ================= Change Interface depending on sun position (now Day Hours)  ===============*/  
+  var d = new Date();
+  var n = d.getHours();
   
+  if(n >=9 && n<=18 ){
+    $positivo= true;
+  }else{
+    $positivo= false;
+  }
+
   /* ================= SETUP ===============*/
   posneg();
 
