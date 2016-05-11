@@ -1,36 +1,24 @@
-  var $mycolor = getRandomColor();
+  var $mycolor =  "hsl("+ Math.floor((Math.random() * 360) + 1)+", 80%, 40%)";
   var $positivo= true;
+  var altezza = $( window ).height();
+  
+  /* ================= SETUP ===============*/
+  posneg();
 
-  $('#positivo').click(function() {
-    $positivo=!$positivo;
-    posneg();
-    $(this).fadeOut();
-    $('#negativo').fadeIn();
-  });
+  $( ".objectBox" ).height(altezza-230);
+  $( ".objectBox >div" ).css("padding-top", altezza/7);    
+  $('pre').fadeTo( "slow", 0.33);
 
-   $('#negativo').click(function() {
-    $positivo=!$positivo;
-    posneg();
-    $(this).fadeOut();
-    $('#positivo').fadeIn();
-  });
+  /* ================= Replace all SVG images with inline SVG ===============*/
 
-  $('body').click(function() {
-      $mycolor = getRandomColor();
-      posneg();
-  });
-/*
-* Replace all SVG images with inline SVG
-*/
-
-jQuery('img.svg').each(function(){
-  var $img = jQuery(this);
-  var imgID = $img.attr('id');
-  var imgClass = $img.attr('class');
-  var imgURL = $img.attr('src');
+  jQuery('img.svg').each(function(){
+    var $img = jQuery(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
 
     jQuery.get(imgURL, function(data) {
-      // Get the SVG tag, ignore the rest
+    // Get the SVG tag, ignore the rest
       var $svg = jQuery(data).find('svg');
 
       // Add replaced image's ID to the new SVG
@@ -44,29 +32,17 @@ jQuery('img.svg').each(function(){
         $(".scuroStroke").css({ stroke: $mycolor });
         $('.img01').fadeTo( "slow", 1 );
       }
-                              
+                                
       // Remove any invalid XML tags as per http://validator.w3.org
       $svg = $svg.removeAttr('xmlns:a');
-                              
+                                
       // Replace image with new SVG
       $img.replaceWith($svg);
     });
-
   });
 
 
-
-   $(".navbar-inverse").css("background-color", $mycolor);
-   $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a").css("color", $mycolor);
-       
-      var altezza = $( window ).height();
-
-      $( ".objectBox" ).height(altezza-230);
-      $( ".objectBox >div" ).css("padding-top", altezza/7);
-      
-
-      $('pre').fadeTo( "slow", 0.33);
-
+ /* ================= INTERACTION ===============*/
       $( "#pittogramma .action00 h3" ).mouseover(function() {
         event.stopImmediatePropagation();
         $('#pittogramma pre').fadeTo( "fast", 1 );
@@ -196,14 +172,27 @@ jQuery('img.svg').each(function(){
       });
 
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+  /* ================= POSITIVO vs NEGATIVO ===============*/
+
+  $('#positivo').click(function() {
+    $positivo=!$positivo;
+    posneg();
+    $(this).fadeOut();
+    $('#negativo').fadeIn();
+  });
+
+   $('#negativo').click(function() {
+    $positivo=!$positivo;
+    posneg();
+    $(this).fadeOut();
+    $('#positivo').fadeIn();
+  });
+
+  $('.main').click(function() {
+     // alert("gino");
+      $mycolor =  "hsl("+ Math.floor((Math.random() * 360) + 1)+", 80%, 40%)";
+      posneg();
+  });
 
 function posneg(){
   if($positivo){

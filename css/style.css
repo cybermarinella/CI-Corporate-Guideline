@@ -3,6 +3,7 @@
 body {
   font-family: 'Inconsolata', sans;
   padding-bottom: 30px;
+ /* background: hsl(80, 90%, 50%);*/
 }
 h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a{
     transition: all 0.5s ease;
@@ -44,7 +45,7 @@ p{
 }
 
 .navbar-inverse{
-    border-bottom: 0;
+    border-color: rgba(255, 255, 255, 0.23);
 }
 
 .navbar-inverse a.navbar-brand {
@@ -97,6 +98,7 @@ h2{
     cursor: pointer;
     opacity: 1;
     font-weight: bold;
+    width: 100%;
 }
 .actions h3:hover{
     cursor: pointer;
@@ -112,6 +114,10 @@ h2{
     display:none;
 }
 
+.spacer{
+    height:90px;
+    width: 100%;
+}
 pre{
     margin-top: 54px;
     display: block;
