@@ -24,12 +24,6 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="#">CODICE INUTILE ♥ Corporate Guideline</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -39,8 +33,7 @@
                 <span class="glyphicon  glyphicon-refresh"></span> Random
               </a> 
             </li-->
-            <li><a href="#" id="positivo"><i class="glyphicon glyphicon-ok-sign" aria-hidden="true"></i></a></li>
-            <li><a href="#" id="negativo" style="display:none"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i></a></li>
+            <li><a href="#" id="posNeg"><i class="glyphicon glyphicon-adjust" aria-hidden="true"></i></a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -51,7 +44,7 @@
             <li class="linkPittogramma active"><a href="#">Logo</a></li>
             <li class="linkStruttura"><a href="#">Structure</a></li>
             <li class="linkLogotipo"><a href="#">Logotipo</a></li>
-            <li class="linkRandom"><a href="#">Random</a></li>
+            <li class="linkRandom"><a href="#">Colors</a></li>
             <li class="linkDont"><a href="#">Do’s and Don’ts</a></li>
       <ul>
     </div>
@@ -191,8 +184,19 @@ print(_)
       </div>
       
       <div class="row" id="random">
+        <h2>Colors</h2>
         <div class="col-md-12">
-          <h2>Random Version</h2>
+          <div class="row objectBox">
+            <div class="col-md-12">
+              <div class="spacer"></div>
+              <div class="spacer"></div>
+              <h1>hsl("+ Math.floor((Math.random() * 360) + 1)+", 80%, 40%)</h1>
+              <p>No color palette, just a <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HLS</a> values, all <a href="https://en.wikipedia.org/wiki/Visible_spectrum">visible sperctrum</a> colors are allowed!<br><i>(Questa è la proporzione normalizzata usata nel logo di Lorenzo)</i></p>
+
+            </div>
+          </div>
+          
+
 <!--p data-height="265" data-theme-id="0" data-slug-hash="WwgqaV" data-default-tab="result" data-user="fedpep" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/fedpep/pen/WwgqaV/">Codice Inutile Logo 2</a> by Federico (<a href="http://codepen.io/fedpep">@fedpep</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script><h2>logo centrale o pattern fullscreen, page </small-->
         </div>

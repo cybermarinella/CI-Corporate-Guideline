@@ -9,7 +9,10 @@ h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a{
     transition: all 0.5s ease;
 }
 
-.chiaro{ fill:#fff;}
+img{
+    width: 100%;
+}
+
 
 nav a:hover {
     opacity: 1;
@@ -65,10 +68,15 @@ h2{
     padding: 10px 5px;
 }
 
+#posNeg{
+    font-size: 30px;
+    line-height: 45px;
+    padding: 0;
+}
 .interactivities{
     position: fixed;
     top: 60px;
-    right: 30px;
+    right: 15px;
     z-index: 100;
     display: block;
     cursor: pointer;
@@ -88,8 +96,9 @@ h2{
     max-width: 900px;
     margin: 0 auto;
 }
-.actions a{
+a{
     font-weight: bolder;
+    text-decoration: underline;
 }
 
 .row.actions h3{
