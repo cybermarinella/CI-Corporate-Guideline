@@ -1,41 +1,24 @@
   var $mycolor = getRandomColor();
-  var $positivo;
-  var $negativo;
-
+  var $positivo= true;
 
   $('#positivo').click(function() {
-    $('body, .interactivities a').css( "background-color", $mycolor);
-
-    $("h2, h3, p, pre, body, nav a:hover, .main a, .interactivities a").css("color", "#fff");
-    $(".scuro").css({ fill: "#fff" });
-    $(".scuroStroke").css({ stroke: "#fff" });
-   
+    $positivo=!$positivo;
+    posneg();
     $(this).fadeOut();
     $('#negativo').fadeIn();
   });
 
    $('#negativo').click(function() {
-    $('body, .interactivities a').css( "background-color", "#fff");
-    $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a, .interactivities a").css("color", $mycolor);
-    $(".scuro").css({ fill: $mycolor });
-    $(".scuroStroke").css({ stroke: $mycolor });
+    $positivo=!$positivo;
+    posneg();
     $(this).fadeOut();
     $('#positivo').fadeIn();
   });
 
-
-  $('#refresh').click(function() {
-      location.reload();
-  });
-
-  /*$('body').click(function() {
-      //alert("gino");
+  $('body').click(function() {
       $mycolor = getRandomColor();
-      $('body, .interactivities a').css( "background-color", "#fff");
-      $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a, .interactivities a").css("color", $mycolor);
-      $(".scuro").css({ fill: $mycolor });
-      $(".scuroStroke").css({ stroke: $mycolor });
-  });*/
+      posneg();
+  });
 /*
 * Replace all SVG images with inline SVG
 */
@@ -220,4 +203,20 @@ function getRandomColor() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+function posneg(){
+  if($positivo){
+    $('body, .interactivities a').css( "background-color", "#fff");
+    $('nav').css( "background-color", $mycolor);
+    $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a, .interactivities a").css("color", $mycolor);
+    $(".scuro").css({ fill: $mycolor });
+    $(".scuroStroke").css({ stroke: $mycolor });
+  }else{
+    $('body, .interactivities a, nav').css( "background-color", $mycolor);
+    $('nav').css( "background-color", $mycolor);
+    $("h2, h3, p, pre, body, nav a:hover, .main a, .interactivities a, nav").css("color", "#fff");
+    $(".scuro").css({ fill: "#fff" });
+    $(".scuroStroke").css({ stroke: "#fff" });
+  }
 }
