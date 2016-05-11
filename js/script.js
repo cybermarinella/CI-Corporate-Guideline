@@ -1,21 +1,54 @@
-   var $mycolor = getRandomColor();
+  var $mycolor = getRandomColor();
+  var $positivo;
+  var $negativo;
+
+
+  $('#positivo').click(function() {
+    $('body, .interactivities a').css( "background-color", $mycolor);
+
+    $("h2, h3, p, pre, body, nav a:hover, .main a, .interactivities a").css("color", "#fff");
+    $(".scuro").css({ fill: "#fff" });
+    $(".scuroStroke").css({ stroke: "#fff" });
+   
+    $(this).fadeOut();
+    $('#negativo').fadeIn();
+  });
+
+   $('#negativo').click(function() {
+    $('body, .interactivities a').css( "background-color", "#fff");
+    $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a, .interactivities a").css("color", $mycolor);
+    $(".scuro").css({ fill: $mycolor });
+    $(".scuroStroke").css({ stroke: $mycolor });
+    $(this).fadeOut();
+    $('#positivo').fadeIn();
+  });
+
 
   $('#refresh').click(function() {
       location.reload();
   });
+
+  /*$('body').click(function() {
+      //alert("gino");
+      $mycolor = getRandomColor();
+      $('body, .interactivities a').css( "background-color", "#fff");
+      $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a, .interactivities a").css("color", $mycolor);
+      $(".scuro").css({ fill: $mycolor });
+      $(".scuroStroke").css({ stroke: $mycolor });
+  });*/
 /*
 * Replace all SVG images with inline SVG
 */
 
-$('img.svg').each(function(){
-  var $img = $(this);
+jQuery('img.svg').each(function(){
+  var $img = jQuery(this);
   var imgID = $img.attr('id');
   var imgClass = $img.attr('class');
   var imgURL = $img.attr('src');
 
-    $.get(imgURL, function(data) {
+    jQuery.get(imgURL, function(data) {
       // Get the SVG tag, ignore the rest
-      var $svg = $(data).find('svg');
+      var $svg = jQuery(data).find('svg');
 
       // Add replaced image's ID to the new SVG
       if(typeof imgID !== 'undefined') {
@@ -41,45 +74,47 @@ $('img.svg').each(function(){
 
 
    $(".navbar-inverse").css("background-color", $mycolor);
-   $("h2, h3, p, pre, body, nav a:hover, .interactivities a").css("color", $mycolor);
+   $("h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a").css("color", $mycolor);
        
-      //var altezza = $( window ).height();
+      var altezza = $( window ).height();
 
-      //$( ".container>.row>div" ).height(altezza);
+      $( ".objectBox" ).height(altezza-230);
+      $( ".objectBox >div" ).css("padding-top", altezza/7);
+      
 
       $('pre').fadeTo( "slow", 0.33);
 
       $( "#pittogramma .action00 h3" ).mouseover(function() {
         event.stopImmediatePropagation();
-        $('#pittogramma pre').fadeTo( "0.1", 1 );
+        $('#pittogramma pre').fadeTo( "fast", 1 );
          $('#pittogramma .img01').fadeTo( "slow", 0 );
          $('#pittogramma .img02').fadeTo( "slow", 0 );
       });
       $( "#pittogramma .action00 h3" ).mouseout(function() {
         event.stopImmediatePropagation();
-        $('#pittogramma pre').fadeTo( "slow", 1 );
+        $('#pittogramma pre').fadeTo( "fast", 1 );
       });
 
       $( "#pittogramma .action01 h3" ).mouseover(function() {
         event.stopImmediatePropagation();
-        $('#pittogramma pre').fadeTo( "0.1", 0 );
-        $('#pittogramma .img01').fadeTo( "slow", 1 );
-        $('#pittogramma .img02').fadeTo( "slow", 0 );
+        $('#pittogramma pre').fadeTo( "fast", 0 );
+        $('#pittogramma .img01').fadeTo( "fast", 1 );
+        $('#pittogramma .img02').fadeTo( "fast", 0 );
       });
       $( "#pittogramma .action01 h3" ).mouseout(function() {
         event.stopImmediatePropagation();
-        $('#pittogramma pre').fadeTo( "slow", 0);
+        $('#pittogramma pre').fadeTo( "fast", 0);
       });
 
       $( "#pittogramma .action02 h3" ).mouseover(function() {
         event.stopImmediatePropagation();
-        $('#pittogramma .img02').fadeTo( "0.1", 1 );
-        $('#pittogramma pre').fadeTo( "slow", 0 );
-         $('#pittogramma .img01').fadeTo( "slow", 0 );
+        $('#pittogramma .img02').fadeTo( "fast", 1 );
+        $('#pittogramma pre').fadeTo( "fast", 0 );
+         $('#pittogramma .img01').fadeTo( "fast", 0 );
       });
       $( "#pittogramma .action02 h3" ).mouseout(function() {
         event.stopImmediatePropagation();
-        $('#pittogramma pre').fadeTo( "slow", 0.33 );
+        $('#pittogramma pre').fadeTo( "fast", 0 );
       });
 
 
@@ -92,7 +127,7 @@ $('img.svg').each(function(){
       });
       $( "#structure .action00 h3" ).mouseout(function() {
         event.stopImmediatePropagation();
-        $('#structure pre').fadeTo( "slow", 0.33 );
+        $('#structure pre').fadeTo( "slow", 0 );
       });
 
       $( "#structure .action01 h3" ).mouseover(function() {
@@ -104,7 +139,7 @@ $('img.svg').each(function(){
       });
       $( "#structure .action01 h3" ).mouseout(function() {
         event.stopImmediatePropagation();
-        $('#structure pre').fadeTo( "slow", 0.33 );
+        $('#structure pre').fadeTo( "slow", 0 );
       });
 
       $( "#structure .action02 h3" ).mouseover(function() {
@@ -116,7 +151,7 @@ $('img.svg').each(function(){
       });
       $( "#structure .action02 h3" ).mouseout(function() {
         event.stopImmediatePropagation();
-        $('#structure pre').fadeTo( "slow", 0.33 );
+        $('#structure pre').fadeTo( "slow", 0 );
       });
 
 
