@@ -57,27 +57,27 @@
 
       $(".linkPittogramma").click(function(event) {
         event.stopImmediatePropagation();
-          $('html, body').animate({ scrollTop: $("#pittogramma").offset().top-60}, 1000);
+          $('html, body').animate({ scrollTop: $("#pittogramma").offset().top-50}, 1000);
       });
       $(".linkStruttura").click(function() {
         event.stopImmediatePropagation(event);
-          $('html, body').animate({scrollTop: $("#structure").offset().top-60}, 1000);
+          $('html, body').animate({scrollTop: $("#structure").offset().top-50}, 1000);
       });
       $(".linkSpace").click(function() {
         event.stopImmediatePropagation(event);
-          $('html, body').animate({scrollTop: $("#space").offset().top-60}, 1000);
+          $('html, body').animate({scrollTop: $("#space").offset().top-50}, 1000);
       });
       $(".linkLogotipo").click(function(event) {
         event.stopImmediatePropagation();
-          $('html, body').animate({scrollTop: $("#logotipo").offset().top-60}, 1000);
+          $('html, body').animate({scrollTop: $("#logotipo").offset().top-50}, 1000);
       });
       $(".linkRandom").click(function(event) {
         event.stopImmediatePropagation();
-          $('html, body').animate({scrollTop: $("#random").offset().top-60}, 1000);
+          $('html, body').animate({scrollTop: $("#random").offset().top-50}, 1000);
       });
       $(".linkDont").click(function(event) {
         event.stopImmediatePropagation();
-          $('html, body').animate({scrollTop: $("#dont").offset().top-60}, 1000);
+          $('html, body').animate({scrollTop: $("#dont").offset().top-50}, 1000);
       });
 
 

@@ -5,6 +5,15 @@ body {
   padding-bottom: 30px;
  /* background: hsl(80, 90%, 50%);*/
 }
+
+.row {
+    border-bottom: 0.5px dotted;
+}
+
+.row .row {
+        border-bottom: 0;
+}
+
 h2, h3, p, pre, body, nav a:hover, .interactivities a, .main a{
     transition: all 0.5s ease;
 }
@@ -53,6 +62,13 @@ p{
 
 .navbar-inverse a.navbar-brand {
     color: #fff;
+}
+.navbar-inverse .navbar-collapse{
+    border: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 10px;
 }
 
 .abs{
@@ -115,8 +131,7 @@ a{
 }
 
 .svg, svg {
-    max-width: 400px;
-    width: 100%;
+    width: 400px;
     font-size: 24px;
     margin: 0 -200px;
     position: absolute;
@@ -143,4 +158,30 @@ pre{
 }
 
 
-.objectBox{}
+
+@media (max-width: 480px) {
+
+    .objectBox{
+        height: auto !important;
+        padding-top: 0 !important;
+    }
+
+    pre{
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .svg, svg{
+        margin-top: -52px;
+    }
+
+    p{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .svg, svg{
+        margin-top: -52px;
+    }
+}
